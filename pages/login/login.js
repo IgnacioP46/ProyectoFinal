@@ -62,7 +62,7 @@ export function showLogin() {
                     allowOutsideClick: false,
                     allowEscapeKey: false,
                 }).then(() => {
-                    window.location.hash = '#home';
+                    window.location = 'home';
                 });
             } else {
                 Swal.fire({
