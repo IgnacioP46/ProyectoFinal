@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "RobotoFontRegular";
+  src: url("./assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-size: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family-global)
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background-color-body);
+  transition: all 0.5s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --font-family-global: "RobotoFontRegular";
+  --font-family-h1: "RobotoFontRegular";
+  --font-family-h2: "RobotoFontRegular";
+  --font-family-h3: "RobotoFontRegular";
+  --font-family-p: "RobotoFontRegular";
+  --background-color-body: #dcd7f5;
+  --background-color-heder: #fcfcff;
+  --background-color-nav: #232946;
+  --background-color-nav-a-hover: #eebbc3;
+  --background-color-gallery-item: #A04838;
+  --background-color-section: #a29dc0;
+  --background-color-gallery-item-button: #eebbc3;
+  --background-color-main-gallery-item-button-hover: #232946;
+  --background-color-from-formulario: #A04838;
+  --background-color-footer: #232946;
+  --background-color-imput-formulario: #e9e0e2;
+  --color-header: #fffffe;
+  --color-nav-a: #fffffe;
+  --color-h1: #232946;
+  --color-nav-a-hover: black;
+  --color-h2: black;
+  --color-h3: black;
+  --color-p: black;
+  --color-from-h1: #232946;
+  --color-imput-formulario: #8f3b8c;
+  --color-gallery-item-button: #232946;
+  --color-gallery-item-button-hover: #dedce9;
+  --color-footer-links-a: #fffffe;
+  --color-error-formulario: #f90000;
+  --color-footer: #b8b7b7;
+  --border-section: 1px solid #232946;
+  --border-gallery-item: 1px solid #232946;
+  --border-gallery-item-button-hover: 1px solid #dedce9;
+  --border-imput-formulario: #6f5cda;
+  --border-botton: 3px solid black;
+  --border-carritoCard: 2px solid #000000;
+  --border-sumRest-btn-PA: 3px solid black;
+  --box-shadow-from-formulario: 0 7px 14px rgba(0, 0, 0, 0.527);
+  --box-shadow-button: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --box-shadow-sumRest-btn-PA: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+h1 {
+  font-family: var(--font-family-h1);
+  color: var(--color-h1);
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+h1::before {
+  content: url(./assets/vinilo.png);
+  margin-right: 10px;
+}
+
+main {
+  width: 100%;
+  height: 1000px;
+}
+
+.Accesible h1 {
+  font-size: 90px;
+}
+
+.Accesible h1::before {
+  content: url(./assets/vinilo.png);
+  margin-right: 10px;
+  height: 50px;
+  width: auto;
+}
+
+.Accesible h2 {
+  font-size: 50px;
+}
+
+.Accesible h3 {
+  font-size: 30px;
+}
+
+.Accesible p {
+  font-size: 25px;
+}
+
+.Accesible div {
+  font-size: 30px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Accesible body {
+    font-size: 16px;
+  }
+
+  .Accesible h1 {
+    font-size: 40px;
+  }
+
+  .Accesible h2 {
+    font-size: 28px;
+  }
+
+  .Accesible p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Accesible body {
+    font-size: 14px;
+  }
+
+  .Accesible h1 {
+    font-size: 32px;
+  }
+
+  .Accesible h2 {
+    font-size: 24px;
+  }
+
+  .Accesible p {
+    font-size: 14px;
+  }
+
+  .Accesible main {
+    padding: 1em;
+  }
+}
+
+@media (max-width: 374px) {
+  .Accesible body {
+    font-size: 12px;
+  }
+
+  .Accesible h1 {
+    font-size: 28px;
+  }
+
+  .Accesible h2 {
+    font-size: 20px;
+  }
+
+  .Accesible p {
+    font-size: 12px;
+  }
+}
