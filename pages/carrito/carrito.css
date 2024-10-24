@@ -19,8 +19,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--background-color-cart-item);
     margin: 5px;
-    width: 250px;
+    width: 300px;
 }
 
 .imgCarrito {
@@ -38,10 +39,12 @@
 
 .h2Carrito {
     margin: 20px;
+    color: var(--color-nav-a);
 }
 
 .pCarrito {
     margin: 20px;
+    color: var(--color-nav-a);
 }
 
 .carritoCard {
@@ -118,6 +121,7 @@
 @media (max-width: 768px) {
     .cart-item {
         width: 200px;
+        text-align: center;
     }
 
     .imgCarrito {
