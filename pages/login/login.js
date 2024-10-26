@@ -88,3 +88,4 @@ export function showLogin() {
         errorElement.style.display = 'none';
     }
 }
+linkPage();
