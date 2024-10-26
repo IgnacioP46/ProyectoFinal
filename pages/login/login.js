@@ -74,6 +74,7 @@ export function showLogin() {
                 });
             }
         }
+        linkPage();
     });
 
     function showError(elementId, message) {
@@ -88,4 +89,4 @@ export function showLogin() {
         errorElement.style.display = 'none';
     }
 }
-linkPage();
+
