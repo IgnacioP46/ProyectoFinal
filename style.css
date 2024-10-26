@@ -81,7 +81,7 @@ h1 {
 }
 
 h1::before {
-  content: url(/assets/ogoVinilo.png);
+  content: url(/assets/logoVinilo.png);
   margin-right: 10px;
 }
 
@@ -95,7 +95,7 @@ main {
 }
 
 .Accesible h1::before {
-  content: url(/assets/ogoVinilo.png);
+  content: url(/assets/logoVinilo.png);
   margin-right: 10px;
   height: 50px;
   width: auto;
