@@ -76,7 +76,7 @@ h1 {
   color: var(--color-h1);
   font-size: 50px;
   display: flex;
-  margin-top: 130px;
+  margin-top: 75px;
   justify-content: center;
 }
 
@@ -92,7 +92,7 @@ main {
 
 .Accesible h1 {
   font-size: 90px;
-  margin-top: 130px;
+  margin-top: 100px;
 }
 
 .Accesible h1::before {
@@ -125,7 +125,7 @@ main {
 
   .Accesible h1 {
     font-size: 40px;
-    margin-top: 130px;
+    margin-top: 100px;
   }
 
   .Accesible h2 {
