@@ -60,8 +60,6 @@ export function showLogin() {
                     text: 'Has iniciado sesión correctamente.',
                     icon: 'success',
                     confirmButtonText: 'Ir al inicio',
-                }).then(() => {
-                    window.location = '#homelink';
                 });
             } else {
                 Swal.fire({
