@@ -44,7 +44,7 @@ export function showCart() {
     } else {
         main.innerHTML = `
             <h1 class="h1Carrito">Carrito de Compras</h1>
-            <img class="imgCarritoV" src="public/assets/carrito vacio.png" alt="carrito vacio">
+            <img class="imgCarritoV" src="/assets/carrito vacio.png" alt="carrito vacio">
             <h4 class="h4Carrito">Oops! Parece que aún no has añadido nada a tu carrito.</h4>
             <h4 class="h4Carrito">Continúa comprando para agregar productos a tu carrito</h4>
         `;
