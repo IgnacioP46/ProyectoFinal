@@ -45,6 +45,14 @@ nav a:hover {
     border-radius: 10px;
 }
 
+.dropdown-content {
+    display: none;
+}
+  
+.dropdown-content.show {
+    display: block;
+}
+
 .clock-container {
     color: var(--color-nav-a);
     display: flex;
