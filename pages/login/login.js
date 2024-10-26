@@ -1,5 +1,6 @@
 import "../login/login.css";
 import { ButtoN } from "../../components/button/button";
+import { linkPage } from '../../utils/linkPage';
 import Swal from 'sweetalert2'; 
 
 export function showLogin() {
