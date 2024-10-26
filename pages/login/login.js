@@ -67,6 +67,8 @@ export function showLogin() {
                     text: 'El correo o la clave son incorrectos. Inténtalo de nuevo.',
                     icon: 'error',
                     confirmButtonText: 'Reintentar',
+                    }).then(() => {
+                    window.location = '#homelink';
                 });
             }
         }
@@ -84,4 +86,4 @@ export function showLogin() {
         errorElement.style.display = 'none';
     }
 }
-
+linkPage('#homelink', home);
