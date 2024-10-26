@@ -4,6 +4,17 @@
     display: flex;
     justify-content: center;
 }
+h1::before {
+  content: url(./assets/vinilo.png);
+  margin-right: 10px;
+}
+
+.Accesible h1::before {
+  content: url(./assets/vinilo.png);
+  margin-right: 10px;
+  height: 50px;
+  width: auto;
+}
 
 .carritoSEc {
     display: flex;
