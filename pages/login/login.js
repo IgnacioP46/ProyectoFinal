@@ -63,7 +63,7 @@ export function showLogin() {
                     allowOutsideClick: false,
                     allowEscapeKey: false,
                 }).then(() => {
-                    window.location.href = '#homelink';
+                    window.location = '#homelink';
                 });
             } else {
                 Swal.fire({
