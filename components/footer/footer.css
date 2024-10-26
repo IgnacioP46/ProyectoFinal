@@ -25,7 +25,7 @@ footer .footer-links a:hover {
 }
 
 footer .Instagram::before {
-    content: url(./assets/instagram.png);
+    content: url(./public/assets/instagram.png);
     margin: 5px;
 }
 
