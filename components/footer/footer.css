@@ -30,7 +30,7 @@ footer .Instagram::before {
 }
 
 footer .Twitter::before {
-    content: url(./assets/logo twitter.png);
+    content: url(/assets/logo twitter.png);
     margin: 5px;
 }
 
