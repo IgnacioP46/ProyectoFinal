@@ -81,7 +81,7 @@ h1 {
 }
 
 h1::before {
-  content: url(/logo assets/vinilo.png);
+  content: url(/assets/logo vinilo.png);
   margin-right: 10px;
 }
 
