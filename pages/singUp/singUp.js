@@ -103,7 +103,7 @@ export function showSignUp() {
                 allowOutsideClick: false,
                 allowEscapeKey: false,
             }).then(() => {
-                window.location.host  = '#home';
+                window.location.host  = 'home';
             });
         }
     });
