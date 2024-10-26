@@ -119,4 +119,4 @@ export function showSignUp() {
         errorElement.textContent = '';
         errorElement.style.display = 'none';
     }
-}
+} 
