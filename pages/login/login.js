@@ -1,6 +1,5 @@
 import "../login/login.css";
 import { ButtoN } from "../../components/button/button";
-import { linkPage } from '../../utils/linkPage';
 import Swal from 'sweetalert2'; 
 
 export function showLogin() {
@@ -61,7 +60,7 @@ export function showLogin() {
                     icon: 'success',
                     confirmButtonText: 'Ir al inicio',
                 }).then(() => {
-                    window.location.linkPage = '#homelink';
+                    window.location = 'pages/home';
                 });
             } else {
                 Swal.fire({
