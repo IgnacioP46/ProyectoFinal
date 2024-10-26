@@ -60,10 +60,8 @@ export function showLogin() {
                     text: 'Has iniciado sesión correctamente.',
                     icon: 'success',
                     confirmButtonText: 'Ir al inicio',
-                    allowOutsideClick: false,
-                    allowEscapeKey: false,
                 }).then(() => {
-                    window.location = '#homelink';
+                    window.location.linkPage = '#homelink';
                 });
             } else {
                 Swal.fire({
@@ -74,7 +72,6 @@ export function showLogin() {
                 });
             }
         }
-        linkPage();
     });
 
     function showError(elementId, message) {
