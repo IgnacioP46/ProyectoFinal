@@ -60,7 +60,7 @@ export function showLogin() {
                     icon: 'success',
                     confirmButtonText: 'Ir al inicio',
                 }).then(() => {
-                    window.location = 'pages/home';
+                    window.location.url = 'https://murmullorecords.netlify.app/#homelink';
                 });
             } else {
                 Swal.fire({
