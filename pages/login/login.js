@@ -1,5 +1,6 @@
 import "../login/login.css";
 import { ButtoN } from "../../components/button/button";
+import { linkPage } from './utils/linkPage';
 import Swal from 'sweetalert2';
 
 export function showLogin() {
@@ -62,7 +63,7 @@ export function showLogin() {
                     allowOutsideClick: false,
                     allowEscapeKey: false,
                 }).then(() => {
-                    window.location = 'home';
+                    window.location = '#homelink';
                 });
             } else {
                 Swal.fire({
