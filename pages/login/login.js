@@ -61,7 +61,7 @@ export function showLogin() {
                     icon: 'success',
                     confirmButtonText: 'Ir al inicio',
                 }).then(() => {
-                    window.HTMLLinkElement = '#homelink';
+                    window.map = '#homelink';
                 });
             } else {
                 Swal.fire({
