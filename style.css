@@ -81,7 +81,7 @@ h1 {
 }
 
 h1::before {
-  content: url(/assets/logo vinilo.png);
+  content: url(./assets/logo vinilo.png);
   margin-right: 10px;
 }
 
@@ -95,7 +95,7 @@ main {
 }
 
 .Accesible h1::before {
-  content: url(/assets/logo vinilo.png);
+  content: url(./assets/logo vinilo.png);
   margin-right: 10px;
   height: 50px;
   width: auto;
