@@ -128,7 +128,7 @@
     .sectionPA {
         display: flex;
         flex-direction: column;
-        width: auto;
+        width: 400px;
     }
 
     .imgPA {
