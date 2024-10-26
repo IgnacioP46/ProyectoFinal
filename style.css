@@ -76,7 +76,7 @@ h1 {
   color: var(--color-h1);
   font-size: 50px;
   display: flex;
-  margin-top: 75px;
+  margin-top: 30px;
   justify-content: center;
 }
 
@@ -92,13 +92,13 @@ main {
 
 .Accesible h1 {
   font-size: 90px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .Accesible h1::before {
   content: url(/assets/logoVinilo.png);
   margin-right: 10px;
-  height: 50px;
+  height: 80px;
   width: auto;
 }
 
@@ -122,10 +122,12 @@ main {
   .Accesible body {
     font-size: 16px;
   }
-
+  h1 {
+    margin-top: 75px;
+  }
   .Accesible h1 {
     font-size: 40px;
-    margin-top: 100px;
+    margin-top: 50px;
   }
 
   .Accesible h2 {
@@ -141,10 +143,12 @@ main {
   .Accesible body {
     font-size: 14px;
   }
-
+  h1 {
+    margin-top: 130px;
+  }
   .Accesible h1 {
     font-size: 32px;
-    margin-top: 130px;
+    margin-top: 100px;
   }
 
   .Accesible h2 {
@@ -164,7 +168,9 @@ main {
   .Accesible body {
     font-size: 12px;
   }
-
+  h1 {
+    margin-top: 130px;
+  }
   .Accesible h1 {
     font-size: 28px;
     margin-top: 160px;
