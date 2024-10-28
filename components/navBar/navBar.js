@@ -33,7 +33,7 @@ export const Navbar = () => {
   clockContainer.classList.add('clock');
 
   const updateClock = () => {
-    const currentTime = moment().format('D MMMM YYYY, h:mm:ss a');
+    const currentTime = moment().format('D MMMM YYYY, h:mm a');
     clockContainer.innerHTML = currentTime;
   };
 
