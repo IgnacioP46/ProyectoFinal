@@ -1,0 +1,147 @@
+.h1Carrito {
+    margin: 20px;
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+}
+
+.carritoSEc {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.cart-item {
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    margin: 5px;
+    width: 300px;
+}
+
+.cart-item:hover {
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+}
+
+.imgCarrito {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    width: 200px;
+    height: 200px;
+    margin: 8px;
+    border-radius: 10px;
+    transition: 0.5s;
+
+}
+
+.h2Carrito {
+    margin-top: 20px;
+    color: var(--color-nav-a);
+    justify-content: flex-start;
+}
+
+.pCarrito {
+    margin: 10px;
+    color: var(--color-nav-a);
+}
+
+.carritoCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 3px;
+    border: var(--border);
+    margin-top: 75px;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+#cart-info {
+    margin: 20px;
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#buy-button {
+    background-color: var(--secondaryColor);
+    color: var(--colorTex);
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    margin: 8px;
+    font-size: 14px;
+    align-self: self-end;
+}
+
+#buy-button:hover {
+    color: var(--secondaryColor);
+    background-color: var(--tertiaryColor);
+    border: var(--border);
+}
+
+.h3Carrito {
+    font-size: 30px;
+    margin: 20px;
+    align-self: self-end;
+
+}
+
+.h4Carrito {
+    font-size: 50px;
+    margin: 20px;
+}
+
+.imgCarritoV {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    margin: 20px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .cart-item {
+        width: 300px;
+    }
+
+    .imgCarrito {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        width: 200px;
+        text-align: center;
+    }
+
+    .imgCarrito {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 374px) {
+    .cart-item {
+        width: 100%;
+    }
+
+    .imgCarrito {
+        width: 150px;
+        height: 150px;
+    }
+}

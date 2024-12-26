@@ -1,0 +1,98 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "ignacio",
+      "lastname": "alvarez",
+      "password": "WEwerfg45-",
+      "role": "admin",
+      "email": "ignacio9046@hotmail.com",
+      "address": "Calle de Fernández de los Ríos, 72",
+      "orders": []
+    },
+    {
+      "username": "pepito",
+      "lastname": "perez",
+      "password": "1234",
+      "email": "pepito@hotmail.com",
+      "address": "Calle de Fernández de los Ríos, 67",
+      "orders": [],
+      "id": 2
+    },
+    {
+      "username": "antonio",
+      "lastname": "gonzalez",
+      "password": "antonio1234",
+      "email": "antonio@hotmail.com",
+      "address": "Calle de Fernández de los Ríos, 77",
+      "orders": [],
+      "id": 3
+    },
+    {
+      "username": "byron",
+      "lastname": "gonzalez",
+      "password": "byron123",
+      "email": "byron123@hotmail.com",
+      "address": "Calle de Fernández de los Ríos, 74",
+      "orders": [],
+      "id": 4
+    },
+    {
+      "username": "test",
+      "lastname": "test2",
+      "password": "test1234",
+      "email": "test1234@hotmail.com",
+      "address": "Calle de Fernández de los Ríos, 7",
+      "orders": [],
+      "id": 5
+    },
+    {
+      "username": "Rebek",
+      "lastname": "alvarez",
+      "password": "eeWWcvg778-",
+      "email": "LaRebe@hotmail.com",
+      "address": "Calle de Fernández de los Ríos, 72",
+      "id": 6
+    },
+    {
+      "username": "Rebeka",
+      "lastname": "alvarez",
+      "password": "eeWWcvg778---",
+      "email": "LaRebek@hotmail.com",
+      "address": "Calle de Fernández de los Ríos, 75",
+      "id": 7
+    },
+    {
+      "username": "qwedf",
+      "lastname": "qwe",
+      "password": "ASwe3--",
+      "email": "wedf@hotmail.com",
+      "address": "qwedf 45",
+      "id": 8
+    },
+    {
+      "username": "aswdfg",
+      "lastname": "aswedfgb",
+      "password": "eW123456-",
+      "email": "Esther.dioschz@gmail.com",
+      "address": "asdcx45",
+      "id": 9
+    },
+    {
+      "username": "",
+      "lastname": "",
+      "password": "",
+      "email": "",
+      "address": "",
+      "id": 10
+    },
+    {
+      "username": "ertghbvf",
+      "lastname": "fgbhdcfvgb",
+      "password": "eWc89ikjhgfeee6-",
+      "email": "ertghbvf@gmail.com",
+      "address": "sedfgvbvcx 45",
+      "id": 11
+    }
+  ]
+}

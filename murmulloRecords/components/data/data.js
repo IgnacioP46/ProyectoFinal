@@ -1,0 +1,47 @@
+export const products = [
+    {
+        nombre: 'SIEMPRE ESTA CHOVENDO NA BEIRA DO MAR 2º EDICIÓN',
+        artista: 'AERONAVE ADOLESCENTE',
+        precio: 12,
+        sello: 'MURMULLORECORDS',
+        formato: 'cassette',
+        imagen: './assets/casete aeronave front.png',
+        imagenTras: './assets/casete aeronave tras.png',
+        spotify: 'https://open.spotify.com/embed/track/3W6l57lktJCdVSqD5tx1it?utm_source=generator',
+        descipcion: "Siete disparos de lofirock en el que no faltan guitarras, distorsión y el universo de Dani. Todo esto encapsulado en un cassette venido de otro planeta.",
+    },
+    {
+        nombre: 'BUENAS Y MALAS DECISIONES',
+        artista: 'FIRMADO CARLOTA',
+        precio: 14,
+        sello: 'MURMULLORECORDS',
+        formato: 'vinilo',
+        imagen: './assets/firmado carlota front.png',
+        imagenTras: './assets/firmado carlota tras.jpg',
+        spotify: 'https://open.spotify.com/embed/track/1Zsh10XZEtiqMMll5UFmV3?utm_source=generator&theme=0',
+        descipcion: "Carlota nos presenta su álbum debut. Siete temas de pop vaporoso y naif que consiguen atrapar desde el minuto uno. Su juventud y sensibilidad demuestran que este largo será la primera piedra de una carrera con mucho futuro.",
+    },
+    {
+        nombre: 'EP PUEBLO NUEVO 10”',
+        artista: 'PUEBLO NUEVO',
+        precio: 14,
+        sello: 'MURMULLORECORDS',
+        formato: 'vinilo',
+        imagen: './assets/pueblonuevo front.png',
+        imagenTras: './assets/pueblonuevo tras.png',
+        spotify: 'https://open.spotify.com/embed/track/03u3c9UpHBqX2AB05ulftJ?utm_source=generator',
+        descipcion: 'El brillante debut del duo madrileño. Un estimulante 10" que ofrece ritmos y sampleos con el mejor groove del panorama nacional.',
+    },
+    {
+        nombre: 'S. XXI',
+        artista: 'ÁNGEL CALVO Y LOS TRENES DE LARGA DISTANCIA',
+        precio: 12,
+        sello: 'MURMULLORECORDS',
+        formato: 'vinilo',
+        imagen: './assets/angel calvo front.png',
+        imagenTras: './assets/angel calvo tras.jpg',
+        spotify: 'https://open.spotify.com/embed/track/7v84QFNCfUx8PZZXVOuCEh?utm_source=generator',
+        descipcion: "Ángel Calvo vuelve con un largo que habla de su relación con el mismo y su propia realidad. Plagado de temas pop y con algún giro hacia nuevos sonidos. Una producción ambiciosa y muy cuidada para rematar una obra redonda. El mejor cantautor pop de Murcia vuelve con su primer lanzamiento en vinilo. ",
+    }
+];
+

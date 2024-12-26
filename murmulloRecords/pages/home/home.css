@@ -1,0 +1,122 @@
+main {
+    flex: 1;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 2em;
+    margin-top: 55px;
+}
+
+main section {
+    padding: 1em;
+    background-color: var(--primaryColor);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+main h2 {
+    font-family: var(--font-family);
+    color: var(--secondaryColor);
+    width: 100%;
+    display: flex;
+    justify-content: center
+}
+
+main .gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 30%;
+    align-items: stretch;
+    width: 290px;
+    gap: 16px;
+    padding: 16px;
+}
+
+main .gallery-item:hover{
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    
+}
+
+main .gallery-item {
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 15px;
+    flex: 1 1 calc(50% - 2em);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: 8px;
+    background-color: var(--primaryColor);
+}
+
+main .gallery-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    width: 200px;
+    height: 200px;
+    margin: 8px;
+    border-radius: 10px;
+    transition: 0.5s;
+
+}
+
+
+main .gallery-item h3 {
+    margin: 8px;
+    font-family: var(--font-family);
+    color: var(--secondaryColor);
+}
+
+main .gallery-item p {
+    margin: 8px;
+    color: var(--colorTex);
+}
+
+
+@media (min-width: 768px) and (max-width: 1150px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    main .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-left: 15%;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    main .gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-left: 0px;
+    }
+
+    main .gallery-item img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 374px) {
+    main .gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-left: 0px;
+    }
+
+    main .gallery-item img {
+        width: 120px;
+        height: 120px;
+    }
+}

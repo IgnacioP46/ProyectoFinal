@@ -1,0 +1,21 @@
+.my-btn {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    background-color: var(--secondaryColor);
+    color: var(--colorTex);
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: var(--box-shadow);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: var(--border-botton);
+}
+
+.my-btn:hover {
+    color: var(--secondaryColor);
+    background-color: var(--tertiaryColor);
+    border: var(--border);
+}

@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "RobotoFontRegular";
+  src: url("./assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-size: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family)
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--primaryColor);
+  transition: all 0.5s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --font-family: "RobotoFontRegular";
+  --primaryColor:  #fffffe;
+  --secondaryColor: #ff906d;
+  --tertiaryColor: #6f5cda;
+  --colorTex: black;
+  --box-shadow: 10px 10px 58px -22px var(--tertiaryColor);
+  --border: 5px solid #000000;
+  --border-radius: 35px 35px 35px 35px;
+}
+
+
+h1 {
+  font-family: var(--font-family);
+  color: var(--colorTex);
+  font-size: 50px;
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+}
+
+h1::before {
+  content: url(/assets/logoVinilo.png);
+  margin-right: 10px;
+}
+
+main {
+  width: 100%;
+  height: 1000px;
+}
+
+.Accesible h1 {
+  font-size: 90px;
+}
+
+.Accesible h1::before {
+  content: url(/assets/logoVinilo.png);
+  margin-right: 10px;
+  height: 50px;
+  width: auto;
+}
+
+.Accesible h2 {
+  font-size: 50px;
+}
+
+.Accesible h3 {
+  font-size: 30px;
+}
+
+.Accesible p {
+  font-size: 25px;
+}
+
+.Accesible div {
+  font-size: 30px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Accesible body {
+    font-size: 16px;
+  }
+
+  .Accesible h1 {
+    font-size: 40px;
+    margin-top: 100px;
+  }
+
+  .Accesible h2 {
+    font-size: 28px;
+  }
+
+  .Accesible p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Accesible body {
+    font-size: 14px;
+  }
+
+  .Accesible h1 {
+    font-size: 32px;
+    margin-top: 100px;
+  }
+
+  .Accesible h2 {
+    font-size: 24px;
+  }
+
+  .Accesible p {
+    font-size: 14px;
+  }
+
+  .Accesible main {
+    padding: 1em;
+  }
+}
+
+@media (max-width: 374px) {
+  .Accesible body {
+    font-size: 12px;
+  }
+
+  .Accesible h1 {
+    font-size: 28px;
+    margin-top: 100px;
+  }
+
+  .Accesible h2 {
+    font-size: 20px;
+  }
+
+  .Accesible p {
+    font-size: 12px;
+  }
+}
