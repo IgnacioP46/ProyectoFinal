@@ -31,65 +31,80 @@ export function showLogin() {
 
         const email = document.querySelector("#email").value.trim();
         const clave = document.querySelector("#clave").value.trim();
-        const nombre = document.querySelector("#nombre").value.trim();
-
-
 
         let isValid = true;
 
-        fetch(API_URL)
-            .then((res) => res.json())
-            .then((users) => {
+        // Validaciones básicas
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        if (!email || !emailPattern.test(email)) {
+            showError("errorEmail", "El correo debe tener un formato válido (ej. usuario@dominio.com).");
+            isValid = false;
+        } else {
+            hideError("errorEmail");
+        }
 
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-                if (!email || !emailPattern.test(email)) {
-                    showError("errorEmail", "El correo debe tener un formato válido (ej. usuario@dominio.com).");
-                    isValid = false;
-                } else {
-                    hideError("errorEmail");
+        if (!clave || clave.length < 8) {
+            showError("errorClave", "La clave debe tener al menos 8 caracteres.");
+            isValid = false;
+        } else {
+            hideError("errorClave");
+        }
+
+        if (!isValid) return;
+
+        // Verificamos los usuarios desde el servidor
+        fetch(`${API_URL}/users`)
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error(`Error en la solicitud: ${res.status}`);
                 }
-
-                if (!clave || clave.length < 8) {
-                    showError("errorClave", "La clave debe tener al menos 8 caracteres.");
-                    isValid = false;
-                } else {
-                    hideError("errorClave");
-                }
-
-                if (isValid) {
-                    const user = users.find(
-                        (user) => user.email === email && user.password === clave);
-
-                    if (!user) {
-                        Swal.fire({
-                            title: 'Error',
-                            text: 'El correo o la clave son incorrectos. Inténtalo de nuevo.',
-                            icon: 'error',
-                            confirmButtonText: 'Reintentar',
-                        });
-                        return;
-
-                    } else {
-                        Swal.fire({
-                            title: '{¡Bienvenido, + ${user.username}!',
-                            text: 'Has iniciado sesión correctamente.',
-                            icon: 'success',
-                            confirmButtonText: 'Ir al inicio',
-                            allowOutsideClick: false,
-                            allowEscapeKey: false,
-                        }).then(() => {
-                            window.location = 'home';
-                        });
-                    };
-
-                    localStorage.setItem("user", JSON.stringify(user));
-                    checkUser(user)
-                }
+                return res.json();
             })
-            
-            });
+            .then((users) => {
+                // Validamos si es un array
+                if (!Array.isArray(users)) {
+                    throw new Error("La respuesta del servidor no es un array.");
+                }
 
-};
+                // Buscamos al usuario en el array
+                const user = users.find(
+                    (user) => user.email === email && user.password === clave
+                );
+
+                if (!user) {
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'El correo o la clave son incorrectos. Inténtalo de nuevo.',
+                        icon: 'error',
+                        confirmButtonText: 'Reintentar',
+                    });
+                    return;
+                }
+
+                // Login exitoso
+                Swal.fire({
+                    title: '¡Bienvenido!',
+                    text: `Hola ${user.username}, has iniciado sesión correctamente.`,
+                    icon: 'success',
+                    confirmButtonText: 'Continuar',
+                }).then(() => {
+                    // Guardar usuario en localStorage
+                    localStorage.setItem("user", JSON.stringify(user));
+                    // Redirigir al inicio u otra página
+                    window.location = 'home';
+                });
+            })
+            .catch((error) => {
+                console.error("Error al cargar usuarios:", error);
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Hubo un problema al intentar iniciar sesión. Por favor, inténtalo más tarde.',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar',
+                });
+            });
+    });
+}
 
 function showError(elementId, message) {
     const errorElement = document.getElementById(elementId);
@@ -102,4 +117,3 @@ function hideError(elementId) {
     errorElement.textContent = '';
     errorElement.style.display = 'none';
 }
-

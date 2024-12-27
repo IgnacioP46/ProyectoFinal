@@ -1,9 +1,10 @@
 import "../carrito/carrito.css";
-import Swal from 'sweetalert2';
+import { API_URL } from "../../main";
+import Swal from "sweetalert2";
 
 export function showCart() {
     const main = document.querySelector("main");
-    const cartItems = JSON.parse(sessionStorage.getItem('cart')) || [];
+    const cartItems = JSON.parse(sessionStorage.getItem("cart")) || [];
 
     if (cartItems.length > 0) {
         let totalPrice = 0;
@@ -23,7 +24,7 @@ export function showCart() {
 
         main.innerHTML = `
             <h1 class="h1Carrito">CARRITO</h1>
-            <section class = "carritoSEc">
+            <section class="carritoSEc">
                 ${cartInfo}
                 <h3 class="h3Carrito">Precio Total de todos los productos: ${totalPrice.toFixed(2)}€</h3>
                 <button id="buy-button">Comprar</button>
@@ -31,14 +32,7 @@ export function showCart() {
         `;
 
         document.querySelector("#buy-button").addEventListener("click", () => {
-            Swal.fire({
-                title: '¡Compra realizada!',
-                text: 'Gracias por tu compra en Murmullo Records',
-                icon: 'success',
-                confirmButtonText: 'Aceptar'
-            });
-            sessionStorage.removeItem('cart');
-            showCart();
+            finalizePurchase(cartItems);
         });
 
     } else {
@@ -49,4 +43,67 @@ export function showCart() {
             <h4 class="h4Carrito">Continúa comprando para agregar productos a tu carrito</h4>
         `;
     }
+}
+
+function savePurchaseToUser(cartItems) {
+    const savedUser = JSON.parse(localStorage.getItem("user"));
+
+    if (!savedUser) {
+        console.log("Compra realizada sin usuario registrado.");
+        return;
+    }
+
+    const totalCartPrice = cartItems.reduce((acc, item) => acc + item.totalPrice, 0);
+
+    fetch(`${API_URL}/users/${savedUser.id}`)
+        .then(response => response.json())
+        .then(user => {
+            const updatedUser = {
+                ...user,
+                purchasedItems: mergePurchasedItems(user.purchasedItems || [], cartItems),
+                totalSpent: (user.totalSpent || 0) + totalCartPrice,
+            };
+
+            fetch(`${API_URL}/users/${savedUser.id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(updatedUser),
+            })
+                .then(() => {
+                    Swal.fire("¡Compra guardada!", "Los datos se han actualizado en tu perfil.", "success");
+                    localStorage.setItem("user", JSON.stringify(updatedUser));
+                })
+                .catch(error => console.error("Error al guardar en el servidor:", error));
+        })
+        .catch(error => console.error("Error al recuperar usuario:", error));
+}
+
+function mergePurchasedItems(existingItems, newItems) {
+    const itemMap = new Map();
+
+    existingItems.forEach(item => itemMap.set(item.id, item));
+    newItems.forEach(item => itemMap.set(item.id, item));
+
+    return Array.from(itemMap.values());
+}
+
+function finalizePurchase(cartItems) {
+    if (!cartItems || cartItems.length === 0) {
+        Swal.fire("El carrito está vacío", "Agrega productos antes de comprar.", "warning");
+        return;
+    }
+
+    const totalCartPrice = cartItems.reduce((acc, item) => acc + item.totalPrice, 0);
+
+    Swal.fire({
+        title: "Compra realizada",
+        text: `Has comprado:\n${cartItems.map(item => `${item.nombre} - ${item.totalPrice.toFixed(2)}€`).join("\n")}\n\nTotal: ${totalCartPrice.toFixed(2)}€`,
+        icon: "success",
+        confirmButtonText: "Aceptar",
+    });
+
+    savePurchaseToUser(cartItems);
+
+    sessionStorage.removeItem("cart");
+    showCart();
 }

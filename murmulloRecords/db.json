@@ -6,9 +6,19 @@
       "lastname": "alvarez",
       "password": "WEwerfg45-",
       "role": "admin",
-      "email": "ignacio9046@hotmail.com",
+      "email": "ignacio9999@hotmail.com",
       "address": "Calle de Fernández de los Ríos, 72",
-      "orders": []
+      "purchasedItems": [
+        {
+          "nombre": "BUENAS Y MALAS DECISIONES",
+          "artista": "FIRMADO CARLOTA",
+          "cantidad": 1,
+          "totalPrice": 14,
+          "imagen": "./assets/firmado carlota front.png"
+        }
+      ],
+      "totalSpent": 14,
+      "avatar": null
     },
     {
       "username": "pepito",
@@ -16,7 +26,9 @@
       "password": "1234",
       "email": "pepito@hotmail.com",
       "address": "Calle de Fernández de los Ríos, 67",
-      "orders": [],
+      "purchasedItems": [],
+      "totalSpent": 0,
+      "avatar": null,
       "id": 2
     },
     {
@@ -25,7 +37,9 @@
       "password": "antonio1234",
       "email": "antonio@hotmail.com",
       "address": "Calle de Fernández de los Ríos, 77",
-      "orders": [],
+      "purchasedItems": [],
+      "totalSpent": 0,
+      "avatar": null,
       "id": 3
     },
     {
@@ -34,7 +48,9 @@
       "password": "byron123",
       "email": "byron123@hotmail.com",
       "address": "Calle de Fernández de los Ríos, 74",
-      "orders": [],
+      "purchasedItems": [],
+      "totalSpent": 0,
+      "avatar": null,
       "id": 4
     },
     {
@@ -43,7 +59,9 @@
       "password": "test1234",
       "email": "test1234@hotmail.com",
       "address": "Calle de Fernández de los Ríos, 7",
-      "orders": [],
+      "purchasedItems": [],
+      "totalSpent": 0,
+      "avatar": null,
       "id": 5
     },
     {
@@ -52,6 +70,9 @@
       "password": "eeWWcvg778-",
       "email": "LaRebe@hotmail.com",
       "address": "Calle de Fernández de los Ríos, 72",
+      "purchasedItems": [],
+      "totalSpent": 0,
+      "avatar": null,
       "id": 6
     },
     {
@@ -60,6 +81,9 @@
       "password": "eeWWcvg778---",
       "email": "LaRebek@hotmail.com",
       "address": "Calle de Fernández de los Ríos, 75",
+      "purchasedItems": [],
+      "totalSpent": 0,
+      "avatar": null,
       "id": 7
     },
     {
@@ -68,6 +92,9 @@
       "password": "ASwe3--",
       "email": "wedf@hotmail.com",
       "address": "qwedf 45",
+      "purchasedItems": [],
+      "totalSpent": 0,
+      "avatar": null,
       "id": 8
     },
     {
@@ -76,15 +103,10 @@
       "password": "eW123456-",
       "email": "Esther.dioschz@gmail.com",
       "address": "asdcx45",
+      "purchasedItems": [],
+      "totalSpent": 0,
+      "avatar": null,
       "id": 9
-    },
-    {
-      "username": "",
-      "lastname": "",
-      "password": "",
-      "email": "",
-      "address": "",
-      "id": 10
     },
     {
       "username": "ertghbvf",
@@ -92,6 +114,19 @@
       "password": "eWc89ikjhgfeee6-",
       "email": "ertghbvf@gmail.com",
       "address": "sedfgvbvcx 45",
+      "purchasedItems": [],
+      "totalSpent": 0,
+      "avatar": null,
+      "id": 10
+    },
+    {
+      "username": "Elena",
+      "lastname": "nito",
+      "password": "eWcdr45-",
+      "email": "delbosque@gmail.com",
+      "address": "una seta 1",
+      "purchasedItems": [],
+      "totalSpent": 0,
       "id": 11
     }
   ]

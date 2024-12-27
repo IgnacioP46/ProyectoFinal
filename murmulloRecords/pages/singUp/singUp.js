@@ -3,7 +3,6 @@ import { ButtoN } from "../../components/button/button";
 import Swal from 'sweetalert2';
 import { API_URL } from "../../main";
 
-
 export function showSignUp() {
     const main = document.querySelector("main");
     main.innerHTML = `
@@ -39,9 +38,6 @@ export function showSignUp() {
             </form>
         </div>
     `;
-
-    const signUpForm = document.querySelector("#signUpForm")
-
 
     const submitButton = document.querySelector("#submitBtn");
     submitButton.addEventListener("click", (event) => {
@@ -89,54 +85,81 @@ export function showSignUp() {
         if (!clave || !clavePattern.test(clave)) {
             showError("errorClave", "La clave debe tener al menos 8 caracteres, incluir mayúsculas, minúsculas y un caracter especial (., -, +, _).");
             isValid = false;
-        } 
-        if (isValid) {
-            localStorage.setItem('userName', nombre);
-            localStorage.setItem('userLastName', apellidos);
-            localStorage.setItem('userEmail', email);
-            localStorage.setItem('userAddress', direccion);
-            localStorage.setItem('userClave', clave);
-
+        } else {
+            hideError("errorClave");
         }
 
-        try {
-            fetch(API_URL)
-              .then((res) => res.json())
-              .then((users) => {
-                if (users.some((user) => user.username === nombre)) {
-                  alert("Este usuario ya existe");
-                  return;
-                } else {
-                  const newUser = {
-                    username: nombre,
-                    lastname: apellidos,
-                    password: clave,
-                    email: email,
-                    address: direccion
-                  };
-                  fetch(API_URL, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(newUser),
-                  });
-                  Swal.fire({
-                    title: '¡Enhorabuena!',
-                    text: 'Te has registrado correctamente.',
-                    icon: 'success',
-                    confirmButtonText: 'Ir al inicio',
-                            allowOutsideClick: false,
-                            allowEscapeKey: false,
-                        }).then(() => {
-                            window.location = 'home';
-                });
-                }
-              });
-          } catch (error) {
-            console.error("Error registrando usuario", error);
-          }
-        
+        if (isValid) {
+            try {
+                fetch(`${API_URL}/users`)
+                    .then((res) => {
+                        if (!res.ok) {
+                            throw new Error(`Error en la solicitud: ${res.status}`);
+                        }
+                        return res.json();
+                    })
+                    .then((users) => {
+                        if (!Array.isArray(users)) {
+                            throw new Error("La respuesta no es un array.");
+                        }
 
-        
+                        if (users.some((user) => user.username === nombre)) {
+                            Swal.fire({
+                                title: 'Error',
+                                text: 'Este usuario ya existe. Por favor, elige otro nombre.',
+                                icon: 'error',
+                                confirmButtonText: 'Aceptar',
+                            });
+                            return;
+                        }
+
+                        const newUser = {
+                            username: nombre,
+                            lastname: apellidos,
+                            password: clave,
+                            email: email,
+                            address: direccion,
+                            purchasedItems: [],
+                            totalSpent: 0,
+                        };
+
+                        fetch(`${API_URL}/users`, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify(newUser),
+                        })
+                            .then(() => {
+                                Swal.fire({
+                                    title: '¡Enhorabuena!',
+                                    text: 'Te has registrado correctamente.',
+                                    icon: 'success',
+                                    confirmButtonText: 'Ir al inicio',
+                                    allowOutsideClick: false,
+                                    allowEscapeKey: false,
+                                }).then(() => {
+                                    window.location = 'home';
+                                });
+                            })
+                            .catch((error) => {
+                                console.error("Error registrando usuario:", error);
+                                Swal.fire({
+                                    title: 'Error',
+                                    text: 'Hubo un problema al registrar el usuario.',
+                                    icon: 'error',
+                                    confirmButtonText: 'Aceptar',
+                                });
+                            });
+                    });
+            } catch (error) {
+                console.error("Error registrando usuario:", error);
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Hubo un problema al registrar el usuario.',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar',
+                });
+            }
+        }
     });
 
     function showError(elementId, message) {
@@ -151,4 +174,3 @@ export function showSignUp() {
         errorElement.style.display = 'none';
     }
 }
-
