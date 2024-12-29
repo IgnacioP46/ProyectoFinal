@@ -11,7 +11,6 @@ export function showUserProfile() {
         return;
     }
 
-    // Renderizar el perfil del usuario
     fetch(`${API_URL}/users/${savedUser.id}`)
         .then((res) => res.json())
         .then((user) => {
@@ -53,7 +52,6 @@ export function showUserProfile() {
             </div>
         `;
 
-        // Evento para cambiar el avatar
         document.querySelector("#upload-avatar").addEventListener("change", (event) => {
             const file = event.target.files[0];
             if (file) {
@@ -66,7 +64,6 @@ export function showUserProfile() {
             }
         });
 
-        // Evento para guardar cambios
         document.querySelector("#save-profile").addEventListener("click", () => {
             const updatedUser = {
                 ...user,
@@ -79,7 +76,6 @@ export function showUserProfile() {
             updateUser(updatedUser, "Perfil actualizado correctamente.");
         });
 
-        // Evento para eliminar el perfil
         document.querySelector("#delete-profile").addEventListener("click", () => {
             Swal.fire({
                 title: "¿Estás seguro?",
@@ -117,7 +113,7 @@ export function showUserProfile() {
             .then(() => {
                 Swal.fire("Éxito", successMessage, "success");
                 localStorage.setItem("user", JSON.stringify(updatedUser));
-                renderUserProfile(updatedUser); // Refrescar el perfil
+                renderUserProfile(updatedUser);
             })
             .catch((error) => {
                 console.error("Error al actualizar el perfil:", error);
