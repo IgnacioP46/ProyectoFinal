@@ -1,4 +1,4 @@
-import "../pageArticulo/PA.css";
+import "./pageArticulo/PA.css";
 import { products } from "../../components/data/data";
 import { cleanPage } from "../../utils/cleanPage";
 import { ButtoN } from "../../components/button/button";

@@ -1,4 +1,4 @@
-import "../home/home.css";
+import "./home/home.css";
 import { cleanPage } from "../../utils/cleanPage";
 import { showProductDetails } from "../pageArticulo/PA";
 import { products } from "../../components/data/data";
