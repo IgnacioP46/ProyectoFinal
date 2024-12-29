@@ -34,7 +34,6 @@ export function showLogin() {
 
         let isValid = true;
 
-        // Validaciones básicas
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
         if (!email || !emailPattern.test(email)) {
             showError("errorEmail", "El correo debe tener un formato válido (ej. usuario@dominio.com).");
@@ -52,7 +51,6 @@ export function showLogin() {
 
         if (!isValid) return;
 
-        // Verificamos los usuarios desde el servidor
         fetch(`${API_URL}/users`)
             .then((res) => {
                 if (!res.ok) {
@@ -61,12 +59,10 @@ export function showLogin() {
                 return res.json();
             })
             .then((users) => {
-                // Validamos si es un array
                 if (!Array.isArray(users)) {
                     throw new Error("La respuesta del servidor no es un array.");
                 }
 
-                // Buscamos al usuario en el array
                 const user = users.find(
                     (user) => user.email === email && user.password === clave
                 );
@@ -81,16 +77,13 @@ export function showLogin() {
                     return;
                 }
 
-                // Login exitoso
                 Swal.fire({
                     title: '¡Bienvenido!',
                     text: `Hola ${user.username}, has iniciado sesión correctamente.`,
                     icon: 'success',
                     confirmButtonText: 'Continuar',
                 }).then(() => {
-                    // Guardar usuario en localStorage
                     localStorage.setItem("user", JSON.stringify(user));
-                    // Redirigir al inicio u otra página
                     window.location = 'home';
                 });
             })
