@@ -1,4 +1,4 @@
-import "./carrito/carrito.css";
+import "./carrito.css";
 import { API_URL } from "../../main";
 import Swal from "sweetalert2";
 

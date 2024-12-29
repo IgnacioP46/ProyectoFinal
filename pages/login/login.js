@@ -1,4 +1,4 @@
-import "./login/login.css";
+import "./login.css";
 import { ButtoN } from "../../components/button/button";
 import { API_URL } from "../../main";
 import Swal from 'sweetalert2';

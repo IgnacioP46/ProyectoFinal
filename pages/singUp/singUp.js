@@ -1,4 +1,4 @@
-import "./singUp/singUp.css";
+import "./singUp.css";
 import { ButtoN } from "../../components/button/button";
 import Swal from 'sweetalert2';
 import { API_URL } from "../../main";

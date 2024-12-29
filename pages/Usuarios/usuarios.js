@@ -1,4 +1,4 @@
-import "./usuarios/usuarios.css";
+import "./usuarios.css";
 import { API_URL } from "../../main";
 import Swal from "sweetalert2";
 
