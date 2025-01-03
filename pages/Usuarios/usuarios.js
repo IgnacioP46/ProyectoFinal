@@ -113,7 +113,7 @@ export function showUserProfile() {
             .then(() => {
                 Swal.fire("Éxito", successMessage, "success");
                 localStorage.setItem("user", JSON.stringify(updatedUser));
-                renderUserProfile(updatedUser); // Refrescar el perfil
+                renderUserProfile(updatedUser);
             })
             .catch((error) => {
                 console.error("Error al actualizar el perfil:", error);
