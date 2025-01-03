@@ -45,6 +45,7 @@ nav a:hover {
 }
 .dropdown-content {
     display: none;
+    background-color: var(--primaryColor);
 }
   
 .dropdown-content.show {

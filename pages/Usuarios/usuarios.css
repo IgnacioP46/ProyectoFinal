@@ -15,6 +15,7 @@
     display: flex;
     justify-content: center;
     font-size: 50px;
+    align-items: center
 }
 
 .avatar {
@@ -86,11 +87,6 @@
         max-width: 90%;
         margin: 10px auto;
     }
-
-    .pUsuario {
-        margin-top: 75px;
-    }
-    
 
     .avatar {
         width: 120px;
