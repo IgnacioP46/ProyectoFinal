@@ -29,12 +29,12 @@ footer .footer-links a:hover {
 }
 
 footer .Instagram::before {
-    content: url(./assets/instagram.png);
+    content: url(../assets/instagram.png);
     margin: 5px;
 }
 
 footer .Twitter::before {
-    content: url(./assets/twitter.png);
+    content: url(../assets/twitter.png);
     margin: 5px;
 }
 
